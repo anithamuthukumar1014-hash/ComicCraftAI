@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComicCraft - AI Comic Creator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <h1>🎨 ComicCraft</h1>
+        <p>Create a 5-panel AI comic from your own idea.</p>
+    </div>
+
+    {% if error %}
+    <div class="error">
+        <strong>Error:</strong> {{ error }}
+    </div>
+    {% endif %}
+
+    <form action="/generate" method="post" class="card">
+        <label>Story Prompt</label>
+        <textarea name="story_prompt" required placeholder="Example: A brave fox explores an enchanted forest and discovers a secret..."></textarea>
+
+        <div class="grid">
+            <div>
+                <label>Main Character Name</label>
+                <input name="character_name" value="Alex" required>
+            </div>
+
+            <div>
+                <label>Setting</label>
+                <select name="setting">
+                    <option>enchanted forest</option>
+                    <option>school</option>
+                    <option>space</option>
+                    <option>future city</option>
+                    <option>underwater world</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Story Tone</label>
+                <select name="tone">
+                    <option>funny</option>
+                    <option>dramatic</option>
+                    <option>adventurous</option>
+                    <option>mysterious</option>
+                    <option>heartwarming</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Art Style</label>
+                <select name="art_style">
+                    <option>comic book</option>
+                    <option>anime</option>
+                    <option>cartoon</option>
+                    <option>pixel art</option>
+                    <option>realistic</option>
+                </select>
+            </div>
+        </div>
+
+        <button type="submit">✨ Generate My Comic</button>
+    </form>
+
+    <p class="hint">The first run may take some time because AI services are being called.</p>
+</div>
+</body>
+</html>

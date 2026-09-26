@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Comic - ComicCraft</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <h1>📖 Your AI Comic</h1>
+        <p>Five panels generated from your story idea.</p>
+    </div>
+
+    {% for panel in layout %}
+    <section class="panel card">
+        <h2>Panel {{ panel.number }}: {{ panel.title }}</h2>
+        <img src="{{ panel.image_path }}" alt="Comic panel {{ panel.number }}">
+
+        <p><em>{{ panel.scene }}</em></p>
+
+        <h3>Caption</h3>
+        <p>{{ panel.caption }}</p>
+
+        <h3>Narration</h3>
+        <p>{{ panel.narration }}</p>
+
+        <h3>Dialogue</h3>
+        <p class="dialogue">{{ panel.dialogue }}</p>
+    </section>
+    {% endfor %}
+
+    <div class="actions">
+        <a class="button" href="{{ pdf_url }}" target="_blank">📥 Download Comic PDF</a>
+        <a class="button secondary" href="/">🔄 Create Another Comic</a>
+    </div>
+</div>
+</body>
+</html>

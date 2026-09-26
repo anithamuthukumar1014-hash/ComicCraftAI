@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #fff4e6, #f3e8ff);
+    color: #222;
+}
+
+.container {
+    width: min(1000px, 92%);
+    margin: 0 auto;
+    padding: 35px 0;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 8px;
+}
+
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin: 14px 0 7px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 18px;
+}
+
+button, .button {
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    padding: 13px 20px;
+    margin-top: 20px;
+    background: #6d28d9;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover, .button:hover {
+    opacity: 0.9;
+}
+
+.secondary {
+    background: #444;
+}
+
+.panel img {
+    width: 100%;
+    max-height: 520px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: #f5f5f5;
+}
+
+.dialogue {
+    background: #f3e8ff;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.actions {
+    text-align: center;
+}
+
+.error {
+    background: #ffe0e0;
+    color: #9b1c1c;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.hint {
+    text-align: center;
+    color: #666;
+}
+
+.center {
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+}
